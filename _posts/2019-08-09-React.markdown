@@ -56,29 +56,51 @@ tags:
  ## 子父通信:回调函数
  
  function Children(props) {
-  return (
-    <div>
-      <p>Children</p>
-      <p>{props.text}</p>
-      <button onClick={() => { props.handleChange('改变了') }}>
-        点击我改变爸爸传给我的东西
-      </button>
-    </div>
-  )
+
+ return (
+
+    <div>
+
+      <p>Children</p>
+
+      <p>{props.text}</p>
+
+   <button onClick={() => { props.handleChange('改变了') }}>
+
+​    点击我改变父组件传给我的东西
+
+   </button>
+
+  </div>
+
+ )
+
 }
 
 function Parent() {
-  let [text, setText] = useState('这是爸爸传给你的东西')
-  function handleChange(val) {
-    setText(val)
-  }
-  return (
-    <div>
-      <p>Parent</p>
-      <Children handleChange={handleChange} text={text}></Children>
-    </div>
-  )
+
+ let [text, setText] = useState('这是父组件传给你的东西')
+
+ function handleChange(val) {
+
+  setText(val)
+
+ }
+
+ return (
+
+    <div>
+
+      <p>Parent</p>
+
+   <Children handleChange={handleChange} text={text}></Children>
+
+  </div>
+
+ )
+
 }
+
 export default Parent
 
 ## 兄弟组件通信:变量提升
@@ -222,7 +244,6 @@ class Parent extends React.Component {
 }
 
 export default Parent
-
  
 
 
